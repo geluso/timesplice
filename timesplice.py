@@ -11,7 +11,7 @@ print default_out_name
 
 parser = argparse.ArgumentParser(description="Converts a given video into a short clip of small splices from throughout the entire original video clip.")
 parser.add_argument("in_file", type=str, help="Name of the input file.")
-parser.add_argument("--out_file", type=str, default=default_out_name, help="Name of the output file to be created.")
+parser.add_argument("out_file", nargs="?", type=str, default=default_out_name, help="Name of the output file to be created.")
 parser.add_argument("--in_length", type=int, default=605, help="User-known length (in seconds) of the original video. Defaults to 605 seconds.")
 parser.add_argument("--out_length", type=int, default=15, help="Length (in seocnds) of the output video.")
 parser.add_argument("--splice_length", type=float, default=.2, help="Length of each splice. Defaults to .2 seconds. The final video will be the concatenation of .2 second splices evenly distributed from the original video.")
